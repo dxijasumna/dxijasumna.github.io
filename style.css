@@ -1,37 +1,63 @@
+
 body {
-  font-family: Arial, sans-serif;
-  padding: 20px;
-  background: #fdfdfd;
-  color: #333;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-image: url('fondo-textura.jpg');
+  background-size: cover;
+  color: #3a2d1a;
 }
+
+header {
+  text-align: center;
+  padding: 20px;
+}
+
 .logo {
   height: 80px;
 }
-header, main {
-  text-align: center;
+
+.lema {
+  font-style: italic;
+  margin-top: -10px;
 }
+
 .productos {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 20px;
+  padding: 20px;
 }
+
 .producto {
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  padding: 10px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
   width: 200px;
+  padding: 10px;
+  text-align: center;
+  transition: transform 0.3s;
 }
+
+.producto:hover {
+  transform: scale(1.05);
+}
+
 .producto img {
   width: 100%;
-  height: auto;
+  border-radius: 10px;
 }
-button {
-  margin-top: 10px;
-  padding: 5px 10px;
-  background-color: #008f39;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+
+#carrito-section {
+  background: #f8f8f8c4;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background: #eee;
+  margin-top: 40px;
 }
