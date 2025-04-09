@@ -1,1 +1,60 @@
-<!DOCTYPE html><html><head><title>Kwe'sx Dxi'jas Umna</title></head><body><h1>Bienvenidos</h1></body></html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kwe'sx Dxi'jas Umna</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Logo" class="logo">
+    <h1>Kwe'sx Dxi'jas Umna</h1>
+    <p>Tejiendo Nuestro Camino</p>
+  </header>
+  <main>
+    <section>
+      <h2>La Cultura del Pueblo Nasa</h2>
+      <p>El pueblo Nasa, originario del Cauca en Colombia, tiene una rica tradición cultural en armonía con la Madre Tierra.</p>
+    </section>
+    <section>
+      <h2>Quiénes Somos</h2>
+      <p>Unimos a artesanos Nasa que crean piezas auténticas que reflejan nuestra identidad.</p>
+    </section>
+    <section>
+      <h2>Nuestros Productos</h2>
+      <div class="productos">
+        <div class="producto">
+          <img src="bolso.png" alt="Bolso">
+          <p>Bolso en lana de ovejo<br><strong>$250.000</strong></p>
+          <button onclick="agregarAlCarrito('Bolso', 250000)">Agregar al carrito</button>
+        </div>
+        <div class="producto">
+          <img src="sombrero-sin-cinta.png" alt="Sombrero sin cinta">
+          <p>Sombrero sin cinta<br><strong>$250.000</strong></p>
+          <button onclick="agregarAlCarrito('Sombrero sin cinta', 250000)">Agregar al carrito</button>
+        </div>
+        <div class="producto">
+          <img src="sombrero-con-cinta.png" alt="Sombrero con cinta">
+          <p>Sombrero con cinta<br><strong>$300.000</strong></p>
+          <button onclick="agregarAlCarrito('Sombrero con cinta', 300000)">Agregar al carrito</button>
+        </div>
+        <div class="producto">
+          <img src="chumbe.png" alt="Chumbe arco iris">
+          <p>Chumbe arco iris<br><strong>$60.000</strong></p>
+          <button onclick="agregarAlCarrito('Chumbe', 60000)">Agregar al carrito</button>
+        </div>
+      </div>
+    </section>
+    <section>
+      <h2>Carrito de Compras</h2>
+      <ul id="carrito"></ul>
+      <p id="total">Total: $0</p>
+      <a id="whatsapp" href="#" target="_blank">
+        <button>Comprar por WhatsApp</button>
+      </a>
+    </section>
+  </main>
+  <script src="carrito.js"></script>
+</body>
+</html>
