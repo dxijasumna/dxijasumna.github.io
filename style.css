@@ -1,11 +1,12 @@
 
 body {
+  background-color: #fdfdfd;
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background-image: url('fondo-textura.jpg');
+  
   background-size: cover;
   color: #3a2d1a;
-}
+ background-color: #fefaf2;}
 
 header {
   text-align: center;
@@ -62,4 +63,48 @@ footer {
   padding: 10px;
   background: #eee;
   margin-top: 40px;
+}
+
+
+/* Estilo para contenedor de productos en grilla */
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Estilo para cada tarjeta de producto */
+.product-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s ease;
+}
+
+.product-card:hover {
+    transform: scale(1.03);
+}
+
+.product-card img {
+    max-width: 100%;
+    border-radius: 12px;
+    margin-bottom: 12px;
+}
+
+.product-card button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.product-card button:hover {
+    background-color: #45a049;
 }

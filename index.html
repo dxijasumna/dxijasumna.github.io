@@ -1,60 +1,58 @@
 
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Kwe'sx Dxi'jas Umna</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kwe'sx Dxi'jas Umna</title>
+<link href="style.css" rel="stylesheet"/>
 </head>
 <body>
-  <header>
-    <img src="logo.png" alt="Logo" class="logo" />
-    <h1>Kwe'sx Dxi'jas Umna</h1>
-    <p class="lema">"Tejiendo Nuestro Camino"</p>
-  </header>
-  <main>
-    <div class="productos">
-      <div class="producto">
-        <img src="bolso.jpg" alt="Bolso" />
-        <h3>Bolso</h3>
-        <p>$250.000</p>
-        <button onclick="agregarAlCarrito('Bolso', 250000)">Agregar</button>
-      </div>
-      <div class="producto">
-        <img src="sombrero_sin.jpg" alt="Sombrero sin cinta" />
-        <h3>Sombrero sin cinta</h3>
-        <p>$200.000</p>
-        <button onclick="agregarAlCarrito('Sombrero sin cinta', 200000)">Agregar</button>
-      </div>
-      <div class="producto">
-        <img src="sombrero_con.jpg" alt="Sombrero con cinta" />
-        <h3>Sombrero con cinta</h3>
-        <p>$250.000</p>
-        <button onclick="agregarAlCarrito('Sombrero con cinta', 250000)">Agregar</button>
-      </div>
-      <div class="producto">
-        <img src="chumbe.jpg" alt="Chumbe arco iris" />
-        <h3>Chumbe arco iris</h3>
-        <p>$60.000</p>
-        <button onclick="agregarAlCarrito('Chumbe arco iris', 60000)">Agregar</button>
-      </div>
-    </div>
-  </main>
-
-  <section id="carrito-section">
-    <h2>Carrito de compras</h2>
-    <ul id="carrito-lista"></ul>
-    <p id="total"></p>
-    <button onclick="confirmarPedido()">Confirmar por Nequi</button>
-    <button id="confirmar-pedido">Confirmar por WhatsApp</button>
+<header>
+<img alt="Logo" class="logo" src="logo.png"/>
+<h1>Kwe'sx Dxi'jas Umna</h1>
+<p class="lema">"Tejiendo Nuestro Camino"</p>
+</header>
+<main>
+<div class="productos product-container">
+<div class="producto product-card">
+<img alt="Bolso" src="bolso.jpg"/>
+<h3>Bolso</h3>
+<p>$250.000</p>
+<button onclick="agregarAlCarrito('Bolso', 250000)">Agregar</button>
+</div>
+<div class="producto product-card">
+<img alt="Sombrero sin cinta" src="sombrero_sin.jpg"/>
+<h3>Sombrero sin cinta</h3>
+<p>$200.000</p>
+<button onclick="agregarAlCarrito('Sombrero sin cinta', 200000)">Agregar</button>
+</div>
+<div class="producto product-card">
+<img alt="Sombrero con cinta" src="sombrero_con.jpg"/>
+<h3>Sombrero con cinta</h3>
+<p>$250.000</p>
+<button onclick="agregarAlCarrito('Sombrero con cinta', 250000)">Agregar</button>
+</div>
+<div class="producto product-card">
+<img alt="Chumbe arco iris" src="chumbe.jpg"/>
+<h3>Chumbe arco iris</h3>
+<p>$60.000</p>
+<button onclick="agregarAlCarrito('Chumbe arco iris', 60000)">Agregar</button>
+</div>
+</div>
+</main>
+<section id="carrito-section">
+<h2>Carrito de compras</h2>
+<ul id="carrito-lista"></ul>
+<p id="total"></p>
+<button onclick="confirmarPedido()">Confirmar por Nequi</button>
+<button id="confirmar-pedido">Confirmar por WhatsApp</button>
 </section>
-
-  <footer>
-    <p>Contacto: chocue199403@gmail.com | 3233751250</p>
-  </footer>
-
-  <script src="script.js"></script>
-  <button id="boton-carrito">🛒</button>
+<footer>
+<p>Contacto: chocue199403@gmail.com | 3233751250</p>
+</footer>
+<script src="script.js"></script>
+<button id="boton-carrito">🛒</button>
 </body>
 </html>
