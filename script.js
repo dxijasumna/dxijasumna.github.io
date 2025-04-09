@@ -37,3 +37,19 @@ function confirmarPedido() {
   const mensaje = `Hola, quiero hacer un pedido:%0A${resumen}%0ATotal: $${total.toLocaleString()}`;
   window.open(`https://wa.me/573233751250?text=${mensaje}`, '_blank');
 }
+
+document.getElementById('boton-carrito').addEventListener('click', () => {
+  const carrito = document.getElementById('carrito-section');
+  carrito.style.display = carrito.style.display === 'none' ? 'block' : 'none';
+});
+
+document.getElementById('confirmar-pedido').addEventListener('click', () => {
+  const lista = document.querySelectorAll('#carrito-lista li');
+  let mensaje = "Hola, quiero confirmar este pedido:%0A";
+  lista.forEach(item => mensaje += `- ${item.textContent}%0A`);
+  const total = document.getElementById('total').textContent;
+  mensaje += `%0ATotal: ${total}`;
+  const numero = '573001234567'; // Reemplaza por tu número real
+  const url = `https://wa.me/${numero}?text=${mensaje}`;
+  window.open(url, '_blank');
+});
