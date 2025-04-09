@@ -2,57 +2,88 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Kwe'sx Dxi'jas Umna</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kwe'sx Dxi'jas Umna</title>
+    <style>
+        body {
+            background-color: white;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .logo {
+            max-width: 200px;
+            height: auto;
+        }
+
+        .productos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .producto {
+            border-radius: 16px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            max-width: 180px;
+            text-align: center;
+        }
+
+        .producto img {
+            width: 100%;
+            border-radius: 12px;
+        }
+
+        .producto button {
+            background-color: #3b7a57;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 8px;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <img src="logo.png" alt="Logo" class="logo" />
-    <h1>Kwe'sx Dxi'jas Umna</h1>
-    <p class="lema">"Tejiendo Nuestro Camino"</p>
-  </header>
-  <main>
-    <div class="productos">
-      <div class="producto">
-        <img src="bolso.jpg" alt="Bolso" />
-        <h3>Bolso</h3>
-        <p>$250.000</p>
-        <button onclick="agregarAlCarrito('Bolso', 250000)">Agregar</button>
-      </div>
-      <div class="producto">
-        <img src="sombrero_sin.jpg" alt="Sombrero sin cinta" />
-        <h3>Sombrero sin cinta</h3>
-        <p>$200.000</p>
-        <button onclick="agregarAlCarrito('Sombrero sin cinta', 200000)">Agregar</button>
-      </div>
-      <div class="producto">
-        <img src="sombrero_con.jpg" alt="Sombrero con cinta" />
-        <h3>Sombrero con cinta</h3>
-        <p>$250.000</p>
-        <button onclick="agregarAlCarrito('Sombrero con cinta', 250000)">Agregar</button>
-      </div>
-      <div class="producto">
-        <img src="chumbe.jpg" alt="Chumbe arco iris" />
-        <h3>Chumbe arco iris</h3>
-        <p>$60.000</p>
-        <button onclick="agregarAlCarrito('Chumbe arco iris', 60000)">Agregar</button>
-      </div>
-    </div>
-  </main>
+    <header>
+        <img src="img/logo.png" alt="Logo Kwe'sx Dxi'jas Umna" class="logo">
+    </header>
 
-  <section id="carrito-section">
-    <h2>Carrito de compras</h2>
-    <ul id="carrito-lista"></ul>
-    <p id="total"></p>
-    <button onclick="confirmarPedido()">Confirmar por Nequi</button>
-  </section>
-
-  <footer>
-    <p>Contacto: chocue199403@gmail.com | 3233751250</p>
-  </footer>
-
-  <script src="script.js"></script>
+    <section class="productos">
+        <div class="producto">
+            <img src="bolso.jpg" alt="Bolso">
+            <h3>Bolso</h3>
+            <p>$250.000</p>
+            <button>Agregar</button>
+        </div>
+        <div class="producto">
+            <img src="1744177290188.jpg" alt="Sombrero sin cinta">
+            <h3>Sombrero sin cinta</h3>
+            <p>$200.000</p>
+            <button>Agregar</button>
+        </div>
+        <div class="producto">
+            <img src="1744177290210.jpg" alt="Sombrero con cinta">
+            <h3>Sombrero con cinta</h3>
+            <p>$250.000</p>
+            <button>Agregar</button>
+        </div>
+        <div class="producto">
+            <img src="1744177290233.jpg" alt="Tela artesanal">
+            <h3>Tela artesanal</h3>
+            <p>Precio</p>
+            <button>Agregar</button>
+        </div>
+    </section>
 </body>
 </html>
