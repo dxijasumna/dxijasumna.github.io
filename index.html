@@ -1,47 +1,84 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Kwe'sx Dxi'jas Umna</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: sans-serif; background: #fdfaf6; margin: 0; padding: 20px; }
+        .productos { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
+        .producto { border: 1px solid #ddd; border-radius: 16px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 200px; text-align: center; padding: 10px; background: #fff; }
+        .producto img { width: 100%; height: 200px; object-fit: cover; border-radius: 12px; }
+        button { background: #914; color: white; border: none; padding: 10px 16px; border-radius: 8px; cursor: pointer; margin-top: 10px; }
+        #carrito-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); align-items: center; justify-content: center; }
+        #carrito { background: white; padding: 20px; border-radius: 12px; width: 300px; max-height: 80vh; overflow-y: auto; }
+        .carrito-item { margin-bottom: 10px; }
+    </style>
 </head>
 <body>
-    <header>
-        <img src="logo.png" alt="Logo" class="logo">
-        <h1 class="titulo" style="font-family:'Dancing Script', cursive;">Kwe'sx Dxi'jas Umna</h1>
-        <p class="subtitulo" style="font-family:'Dancing Script', cursive;">"Tejiendo Nuestro Camino"</p>
-    </header>
+    <h1>Kwe'sx Dxi'jas Umna</h1>
+    <div class="productos" id="productos"></div>
+    <button onclick="mostrarCarrito()">Ver carrito</button>
 
-    <main class="productos">
-        <div class="producto">
-            <img src="bolso.jpg" alt="Bolso">
-            <h3>Bolso</h3>
-            <p>$250.000</p>
-            <button>Agregar</button>
+    <div id="carrito-modal">
+        <div id="carrito">
+            <h2>Carrito</h2>
+            <div id="carrito-items"></div>
+            <p id="total"></p>
+            <button onclick="confirmarPedido()">Confirmar por WhatsApp</button>
+            <button onclick="cerrarCarrito()">Cerrar</button>
         </div>
+    </div>
 
-        <div class="producto">
-            <img src="sombrero_sin.jpg" alt="Sombrero sin cinta">
-            <h3>Sombrero sin cinta</h3>
-            <p>$200.000</p>
-            <button>Agregar</button>
-        </div>
+    <script>
+        const productos = [
+            { nombre: "Bolso lana de ovejo", precio: 250000, imagen: "images/bolso.jpg" },
+            { nombre: "Sombrero sin cinta", precio: 200000, imagen: "images/sombrero_sin_cinta.jpg" },
+            { nombre: "Sombrero con cinta", precio: 260000, imagen: "images/sombrero_con_cinta.jpg" },
+            { nombre: "Chumbe", precio: 60000, imagen: "images/chumbe.jpg" }
+        ];
 
-        <div class="producto">
-            <img src="sombrero_con.jpg" alt="Sombrero con cinta">
-            <h3>Sombrero con cinta</h3>
-            <p>$250.000</p>
-            <button>Agregar</button>
-        </div>
+        const carrito = [];
 
-        <div class="producto">
-            <img src="chumbe.jpg" alt="Chumbe">
-            <h3>Chumbe</h3>
-            <p>$150.000</p>
-            <button>Agregar</button>
-        </div>
-    </main>
+        const productosDiv = document.getElementById("productos");
+        productos.forEach((p, i) => {
+            productosDiv.innerHTML += `
+                <div class="producto">
+                    <img src="${p.imagen}" alt="${p.nombre}">
+                    <h3>${p.nombre}</h3>
+                    <p>$${p.precio.toLocaleString()}</p>
+                    <button onclick="agregarCarrito(${i})">Agregar</button>
+                </div>`;
+        });
+
+        function agregarCarrito(i) {
+            carrito.push(productos[i]);
+            alert("Agregado al carrito: " + productos[i].nombre);
+        }
+
+        function mostrarCarrito() {
+            document.getElementById("carrito-modal").style.display = "flex";
+            const carritoItems = document.getElementById("carrito-items");
+            carritoItems.innerHTML = "";
+            let total = 0;
+            carrito.forEach((item, idx) => {
+                carritoItems.innerHTML += `<div class="carrito-item">${item.nombre} - $${item.precio.toLocaleString()}</div>`;
+                total += item.precio;
+            });
+            document.getElementById("total").textContent = "Total: $" + total.toLocaleString();
+        }
+
+        function cerrarCarrito() {
+            document.getElementById("carrito-modal").style.display = "none";
+        }
+
+        function confirmarPedido() {
+            const resumen = carrito.map(item => `- ${item.nombre}: $${item.precio.toLocaleString()}`).join("\n");
+            const total = carrito.reduce((sum, item) => sum + item.precio, 0);
+            const mensaje = encodeURIComponent(`Hola, quiero hacer un pedido:\n${resumen}\nTotal: $${total.toLocaleString()}\nPago por Nequi.`);
+            window.open(`https://wa.me/573233751250?text=${mensaje}`, "_blank");
+        }
+    </script>
 </body>
 </html>
