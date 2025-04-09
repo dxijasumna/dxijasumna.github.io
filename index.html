@@ -2,59 +2,172 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kwe'sx Dxi'jas Umna</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Segoe Script', cursive;
+      background: #fdfbf7 url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    header {
+      background: #fff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      padding: 1em;
+      border-radius: 0 0 16px 16px;
+    }
+    header img {
+      height: 100px;
+    }
+    header h1 {
+      margin: 0.2em 0 0;
+    }
+    header h2 {
+      font-size: 1em;
+      font-weight: normal;
+      margin: 0;
+    }
+    .productos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1em;
+      padding: 1em;
+    }
+    .producto {
+      background: #fff;
+      padding: 1em;
+      border-radius: 16px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.2s;
+    }
+    .producto:hover {
+      transform: scale(1.02);
+    }
+    .producto img {
+      max-width: 100%;
+      border-radius: 12px;
+    }
+    .producto button {
+      background: #7d3cff;
+      color: #fff;
+      border: none;
+      padding: 0.5em 1em;
+      border-radius: 12px;
+      cursor: pointer;
+      margin-top: 0.5em;
+    }
+    #carrito {
+      background: #fff;
+      padding: 1em;
+      margin: 1em;
+      border-radius: 16px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+    #carrito ul {
+      list-style: none;
+      padding: 0;
+    }
+    #carrito li {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5em;
+    }
+    footer {
+      background: #f4f4f4;
+      text-align: center;
+      padding: 1em;
+      font-size: 0.9em;
+      margin-top: 2em;
+      border-radius: 16px 16px 0 0;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <img src="logo.png" alt="Logo" class="logo">
+    <img src="logo.png" alt="Logo" />
     <h1>Kwe'sx Dxi'jas Umna</h1>
-    <p>Tejiendo Nuestro Camino</p>
+    <h2>"Tejiendo Nuestro Camino"</h2>
   </header>
-  <main>
-    <section>
-      <h2>La Cultura del Pueblo Nasa</h2>
-      <p>El pueblo Nasa, originario del Cauca en Colombia, tiene una rica tradición cultural en armonía con la Madre Tierra.</p>
-    </section>
-    <section>
-      <h2>Quiénes Somos</h2>
-      <p>Unimos a artesanos Nasa que crean piezas auténticas que reflejan nuestra identidad.</p>
-    </section>
-    <section>
-      <h2>Nuestros Productos</h2>
-      <div class="productos">
-        <div class="producto">
-          <img src="bolso.png" alt="Bolso">
-          <p>Bolso en lana de ovejo<br><strong>$250.000</strong></p>
-          <button onclick="agregarAlCarrito('Bolso', 250000)">Agregar al carrito</button>
-        </div>
-        <div class="producto">
-          <img src="sombrero-sin-cinta.png" alt="Sombrero sin cinta">
-          <p>Sombrero sin cinta<br><strong>$250.000</strong></p>
-          <button onclick="agregarAlCarrito('Sombrero sin cinta', 250000)">Agregar al carrito</button>
-        </div>
-        <div class="producto">
-          <img src="sombrero-con-cinta.png" alt="Sombrero con cinta">
-          <p>Sombrero con cinta<br><strong>$300.000</strong></p>
-          <button onclick="agregarAlCarrito('Sombrero con cinta', 300000)">Agregar al carrito</button>
-        </div>
-        <div class="producto">
-          <img src="chumbe.png" alt="Chumbe arco iris">
-          <p>Chumbe arco iris<br><strong>$60.000</strong></p>
-          <button onclick="agregarAlCarrito('Chumbe', 60000)">Agregar al carrito</button>
-        </div>
-      </div>
-    </section>
-    <section>
-      <h2>Carrito de Compras</h2>
-      <ul id="carrito"></ul>
-      <p id="total">Total: $0</p>
-      <a id="whatsapp" href="#" target="_blank">
-        <button>Comprar por WhatsApp</button>
-      </a>
-    </section>
-  </main>
-  <script src="carrito.js"></script>
+
+  <section class="productos">
+    <div class="producto">
+      <img src="bolso.jpg" alt="Bolso artesanal" />
+      <h3>Bolso</h3>
+      <p>$250.000</p>
+      <button onclick="agregarAlCarrito('Bolso', 250000)">Agregar</button>
+    </div>
+    <div class="producto">
+      <img src="sombrero_sin_cinta.jpg" alt="Sombrero sin cinta" />
+      <h3>Sombrero sin cinta</h3>
+      <p>$200.000</p>
+      <button onclick="agregarAlCarrito('Sombrero sin cinta', 200000)">Agregar</button>
+    </div>
+    <div class="producto">
+      <img src="sombrero_con_cinta.jpg" alt="Sombrero con cinta" />
+      <h3>Sombrero con cinta</h3>
+      <p>$250.000</p>
+      <button onclick="agregarAlCarrito('Sombrero con cinta', 250000)">Agregar</button>
+    </div>
+    <div class="producto">
+      <img src="chumbe.jpg" alt="Chumbe arco iris" />
+      <h3>Chumbe arco iris</h3>
+      <p>$60.000</p>
+      <button onclick="agregarAlCarrito('Chumbe arco iris', 60000)">Agregar</button>
+    </div>
+  </section>
+
+  <section id="carrito">
+    <h2>Carrito de Compras</h2>
+    <ul id="listaCarrito"></ul>
+    <p><strong>Total:</strong> $<span id="total">0</span></p>
+    <p><strong>Pagar con Nequi:</strong> 3233751250</p>
+    <button onclick="confirmarCompra()">Confirmar Compra</button>
+  </section>
+
+  <footer>
+    Contacto: chocue199403@gmail.com | 3233751250
+  </footer>
+
+  <script>
+    let carrito = [];
+
+    function agregarAlCarrito(producto, precio) {
+      carrito.push({ producto, precio });
+      actualizarCarrito();
+    }
+
+    function eliminarDelCarrito(index) {
+      carrito.splice(index, 1);
+      actualizarCarrito();
+    }
+
+    function actualizarCarrito() {
+      const lista = document.getElementById('listaCarrito');
+      const total = document.getElementById('total');
+      lista.innerHTML = '';
+      let suma = 0;
+      carrito.forEach((item, index) => {
+        suma += item.precio;
+        const li = document.createElement('li');
+        li.innerHTML = `${item.producto} - $${item.precio} <button onclick="eliminarDelCarrito(${index})">Eliminar</button>`;
+        lista.appendChild(li);
+      });
+      total.textContent = suma;
+    }
+
+    function confirmarCompra() {
+      if (carrito.length === 0) {
+        alert('El carrito está vacío.');
+        return;
+      }
+      alert('Compra confirmada. Realiza tu pago a Nequi 3233751250');
+      carrito = [];
+      actualizarCarrito();
+    }
+  </script>
 </body>
 </html>
